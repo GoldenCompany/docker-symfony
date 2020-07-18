@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+    db:
+        image: postgres:12
+        environment:
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-symfony}
+
+    php:
+        build:
+            context: ../
+            dockerfile: ./docker/php/Dockerfile
+        volumes:
+            - ../:/srv/api:rw,cached
+            - /srv/api/vendor
+            - /srv/api/var/cache
+        command: >
+            bash -c "composer install &&
+                     php bin/console doctrine:migrations:migrate -n
+                     php bin/console doctrine:fixtures:load -n
+                     php bin/console cache:clear
+                     php-fpm"
