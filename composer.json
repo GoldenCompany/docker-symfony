@@ -11,5 +11,5 @@
     ],
     "extra": {
         "docker-dir": "docker/"
-    },
+    }
 }
