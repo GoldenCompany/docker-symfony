@@ -1,7 +1,7 @@
 {
     "name": "golden-company/docker-symfony",
-    "description": "library",
-    "type": "symfony-bundle",
+    "description": "",
+    "type": "library",
     "licence": "proprietary",
     "authors": [
         {
