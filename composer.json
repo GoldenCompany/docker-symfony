@@ -8,5 +8,8 @@
             "name": "Red",
             "email": "nukacolaquartz@gmail.com"
         }
-    ]
+    ],
+    "extra": {
+        "docker-dir": "docker/"
+    },
 }
