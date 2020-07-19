@@ -1,0 +1,12 @@
+{
+    "name": "golden-company/docker-symfony",
+    "description": "library",
+    "type": "symfony-bundle",
+    "licence": "proprietary",
+    "authors": [
+        {
+            "name": "Red",
+            "email": "nukacolaquartz@gmail.com"
+        }
+    ]
+}
