@@ -9,7 +9,8 @@ services:
             - backend
 
     php:
-        network_mode: "host"
+        networks:
+            - backend
 
     nginx:
         image: nginx:latest
