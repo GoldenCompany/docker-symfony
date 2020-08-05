@@ -2,7 +2,7 @@ ARG PHP_VERSION=7.4
 FROM php:${PHP_VERSION}-fpm as php
 
 RUN apt-get update && \
-    apt-get install -y libicu-dev libpq-dev libzip-dev unzip
+    apt-get install -y git libicu-dev libpq-dev libzip-dev unzip
 
 RUN docker-php-ext-configure intl && \
     docker-php-ext-configure pgsql --with-pgsql=/usr/local/pgsql

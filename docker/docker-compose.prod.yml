@@ -9,12 +9,12 @@ services:
             - ./postgres/data:/var/lib/postgresql/data
 
     migrations:
-        image: ${PHP_IMAGE:?PHP_IMAGE is not set or empty}
+        image: ${CI_REGISTRY_IMAGE:?CI_REGISTRY_IMAGE is not set or empty}
         command: >
             bash -c "while !</dev/tcp/db/5432; do sleep 1; done; php bin/console doctrine:migrations:migrate"
 
     php:
-        image: ${PHP_IMAGE:?PHP_IMAGE is not set or empty}
+        image: ${CI_REGISTRY_IMAGE:?CI_REGISTRY_IMAGE is not set or empty}
         volumes:
             - ./php/conf/prod.ini:/usr/local/etc/php/conf.d/php.ini
             - ../public/upload:/srv/api/public/upload
